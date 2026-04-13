@@ -170,7 +170,7 @@ const Invoices = () => {
 
   /************ FACTURACION ************/
 
-  const TAX_RATE = 0.21; // 21% de impuestos
+  //const TAX_RATE = 0.21; // 21% de impuestos
 
   //const [selectedClient, setSelectedClient] = useState("");
   //const [selectedProducts, setSelectedProducts] = useState([]);
