@@ -18,7 +18,9 @@ import NuevoProducto from "../components/NuevoProducto";
 
 const NewSale = () => {
 
-  //const [openModal, setOpenModal] = useState(false);
+  console.log(openModal)
+
+  const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
   const [openModal3, setOpenModal3] = useState(false);
 
@@ -190,8 +192,8 @@ const NewSale = () => {
       <h1>New Sale</h1>
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '370px' }}>
         <Button type="success" text='Guardar' />
-        <Button type="secondary" text='Cancelar' />
-        <Button type="primary" text='Crear Cliente' onClick={() => setOpenModal2(true)} />
+        <Button onClick={() => setOpenModal(true)} type="secondary" text='Cancelar' />
+        <Button onClick={() => setOpenModal2(true)} type="primary" text='Crear Cliente' />
       </div>
 
       <p>

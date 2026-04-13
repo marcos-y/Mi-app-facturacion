@@ -27,14 +27,16 @@ const data2 = [
 
 const Home = () => {
 
-    //const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     //const [openModal2, setOpenModal2] = useState(false);
     //const [openModal3, setOpenModal3] = useState(false);
-    //const [modalData, setModalData] = useState([]);
+    const [modalData, setModalData] = useState([]);
 
     const handleClick = (props) => {
         setOpenModal(true)
         setModalData(props)
+        console.log(openModal)
+        console.log(modalData)
     };
 
     const columns = [
