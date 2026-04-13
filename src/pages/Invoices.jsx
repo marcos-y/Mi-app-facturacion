@@ -173,7 +173,7 @@ const Invoices = () => {
   const TAX_RATE = 0.21; // 21% de impuestos
 
   //const [selectedClient, setSelectedClient] = useState("");
-  const [selectedProducts, setSelectedProducts] = useState([]);
+  //const [selectedProducts, setSelectedProducts] = useState([]);
   //const [status, setStatus] = useState("Pendiente");
 
   // Agregar un producto a la factura
@@ -192,8 +192,8 @@ const Invoices = () => {
   //  setSelectedProducts(updated);
   //};
 
-  const subtotal = selectedProducts.reduce((acc, p) => acc + p.total, 0);
-  const taxes = subtotal * TAX_RATE;
+  //const subtotal = selectedProducts.reduce((acc, p) => acc + p.total, 0);
+  //const taxes = subtotal * TAX_RATE;
   //const total = subtotal + taxes;
 
   //const handleSubmit = (e) => {

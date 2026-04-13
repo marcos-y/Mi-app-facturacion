@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Card from '../components/Card';
 import sales_daily from '../assets/sales_daily.jpg';
 import month_sales from '../assets/month_sales.png';
@@ -22,10 +21,6 @@ const data2 = [
 ];
 
 const Home = () => {
-
-  //const [openModal, setOpenModal] = useState(false);
-  //const [openModal2, setOpenModal2] = useState(false);
-  //const [openModal3, setOpenModal3] = useState(false);
 
   return (
     <div style={{ marginLeft: '220px' }}>

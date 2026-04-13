@@ -18,13 +18,11 @@ import NuevoProducto from "../components/NuevoProducto";
 
 const NewSale = () => {
 
-  console.log(openModal)
-
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
   const [openModal3, setOpenModal3] = useState(false);
 
-  const [tipoCliente, setTipoCliente] = useState("");
+  const [tipoCliente] = useState("");
 
   const handleCliente = (cliente) => {
     console.log("Cliente seleccionado:", cliente);
@@ -163,7 +161,7 @@ const NewSale = () => {
     { id: 2, nombre: "Nota de Débito" },
   ];
 
-  const [factura, setfacturas] = useState("");
+  const [factura] = useState("");
   const facturas = [
     { id: 1, nombre: "A" },
     { id: 2, nombre: "B" },
@@ -276,7 +274,6 @@ const NewSale = () => {
         <Button type="success" text='Cancelar Venta' />
       </div>
 
-      {/*
       <Modal
         isOpen={openModal}
         onClose={() => setOpenModal(false)}
@@ -292,7 +289,6 @@ const NewSale = () => {
           <button type="submit">Guardar</button>
         </form>
       </Modal>
-      */}
 
       <Modal
         isOpen={openModal2}
