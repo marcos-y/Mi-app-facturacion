@@ -9,6 +9,7 @@ import PaymentStateChart from "../components/PaymentStateChart";
 import Table from "../components/Table";
 import Button from "../components/Button";
 
+/*
 const data = [
     { metodo: "Efectivo", monto: 50000 },
     { metodo: "Tarjeta", monto: 30000 },
@@ -22,13 +23,14 @@ const data2 = [
     { nombre: "Leche", cantidad: 80 },
     { nombre: "Galletitas", cantidad: 60 },
 ];
+*/
 
 const Home = () => {
 
-    const [openModal, setOpenModal] = useState(false);
-    const [openModal2, setOpenModal2] = useState(false);
-    const [openModal3, setOpenModal3] = useState(false);
-    const [modalData, setModalData] = useState([]);
+    //const [openModal, setOpenModal] = useState(false);
+    //const [openModal2, setOpenModal2] = useState(false);
+    //const [openModal3, setOpenModal3] = useState(false);
+    //const [modalData, setModalData] = useState([]);
 
     const handleClick = (props) => {
         setOpenModal(true)

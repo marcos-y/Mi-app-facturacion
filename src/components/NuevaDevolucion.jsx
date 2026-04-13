@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Form, Row, Col, Button, Table } from "react-bootstrap";
 
 const DevolucionModalContent = ({ items, devolucionInfo, onConfirm, onCancel }) => {

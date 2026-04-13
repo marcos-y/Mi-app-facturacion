@@ -1,6 +1,5 @@
 import Card from "../components/Card";
 import SalesChart from '../components/SalesChart';
-import Table from "../components/Table";
 import RecentInvoices from '../components/RecentInvoices';
 import sales_daily from '../assets/sales_daily.jpg';
 import devolution from '../assets/devolution.png';
@@ -9,7 +8,6 @@ import client from '../assets/client.png';
 import stock from '../assets/stock.png';
 import sold2 from '../assets/sold2.png';
 import average from '../assets/average.png';
-import Modal from "../components/Modal";
 
 const Dashboard = () => {
   return (

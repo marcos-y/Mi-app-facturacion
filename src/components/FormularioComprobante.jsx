@@ -14,6 +14,7 @@ const FormularioComprobante = ({ onSubmit }) => {
     }
   };
 
+  /*
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -37,6 +38,7 @@ const FormularioComprobante = ({ onSubmit }) => {
 
     setNumero("");
   };
+  */
 
   return (
       <div style={{ marginTop:'20px' }} className="card shadow-sm">

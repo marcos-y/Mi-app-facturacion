@@ -264,6 +264,7 @@ const Clients = () => {
     }
   ];
 
+  /*
   const data2 = [{
     "header": {
       "name": "Juan Pérez",
@@ -299,6 +300,7 @@ const Clients = () => {
       }
     }
   }];
+  */
 
   const styles = {
     container: {

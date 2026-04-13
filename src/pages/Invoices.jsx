@@ -172,33 +172,33 @@ const Invoices = () => {
 
   const TAX_RATE = 0.21; // 21% de impuestos
 
-  const [selectedClient, setSelectedClient] = useState("");
+  //const [selectedClient, setSelectedClient] = useState("");
   const [selectedProducts, setSelectedProducts] = useState([]);
-  const [status, setStatus] = useState("Pendiente");
+  //const [status, setStatus] = useState("Pendiente");
 
   // Agregar un producto a la factura
-  const addProduct = (product) => {
-    setSelectedProducts([
-      ...selectedProducts,
-      { ...product, quantity: 1, total: product.precio },
-    ]);
-  };
+  //const addProduct = (product) => {
+  //  setSelectedProducts([
+  //    ...selectedProducts,
+  //    { ...product, quantity: 1, total: product.precio },
+  //  ]);
+  //};
 
   // Actualizar cantidad y recalcular total
-  const updateQuantity = (index, quantity) => {
-    const updated = [...selectedProducts];
-    updated[index].quantity = quantity;
-    updated[index].total = quantity * updated[index].precio;
-    setSelectedProducts(updated);
-  };
+  //const updateQuantity = (index, quantity) => {
+  //  const updated = [...selectedProducts];
+  //  updated[index].quantity = quantity;
+  //  updated[index].total = quantity * updated[index].precio;
+  //  setSelectedProducts(updated);
+  //};
 
   const subtotal = selectedProducts.reduce((acc, p) => acc + p.total, 0);
   const taxes = subtotal * TAX_RATE;
-  const total = subtotal + taxes;
+  //const total = subtotal + taxes;
 
-  const handleSubmit = (e) => {
+  //const handleSubmit = (e) => {
 
-    e.preventDefault();
+    //e.preventDefault();
 
     //El Modal no sabe cómo ni dónde guardar los datos, por eso onSave viene desde el componente padre (Invoices.jsx). Ahí es donde se actualiza el estado de la lista de facturas:
     //const handleSave = (newInvoice) => {
@@ -215,11 +215,11 @@ const Invoices = () => {
     });*/
 
     // Limpiar formulario
-    setSelectedClient("");
-    setSelectedProducts([]);
-    setStatus("Pendiente");
+    //setSelectedClient("");
+    //setSelectedProducts([]);
+    //setStatus("Pendiente");
     //onClose();
-  };
+  //};
 
   /**********************************/
 

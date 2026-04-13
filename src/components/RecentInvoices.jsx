@@ -44,6 +44,7 @@ const RecentInvoices = () => {
         { nro: "00047", cliente: "pedro@mail.com", fecha: 24, total: '$15.000', estado: 'Pagada' }
     ];
 
+    /*
     const data2 = [
     {
         "header": {
@@ -137,6 +138,7 @@ const RecentInvoices = () => {
           "notes": "Gracias por su compra"
         }
     }];
+    */
 
     return (
         <div>

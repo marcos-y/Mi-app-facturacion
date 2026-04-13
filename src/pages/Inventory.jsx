@@ -110,6 +110,7 @@ const Inventory = () => {
   Motivo: pérdida / rotura
   */
 
+  /*
   const columns2 = [
     { header: "Producto", accessor: "producto" },
     { header: "Sku", accessor: "sku" },
@@ -126,7 +127,7 @@ const Inventory = () => {
         </button>
       )
     }
-  ];
+  ];*/
 
   const data2 = [
     {

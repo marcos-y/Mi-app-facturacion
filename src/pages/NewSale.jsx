@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Button from "../components/Button";
-import SelectCliente from "../components/SelectCliente";
 import ClienteSelector from "../components/ClienteSelector";
-import SelectorFormaPago from "../components/SelectFormaPago";
 import Modal from "../components/Modal";
 import Table from "../components/Table";
 import CampoObservaciones from "../components/CampoOberservaciones";
@@ -20,7 +18,7 @@ import NuevoProducto from "../components/NuevoProducto";
 
 const NewSale = () => {
 
-  const [openModal, setOpenModal] = useState(false);
+  //const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
   const [openModal3, setOpenModal3] = useState(false);
 
@@ -143,7 +141,7 @@ const NewSale = () => {
     },
   ];
 
-  const [formaPago, setFormaPago] = useState("");
+  //const [formaPago, setFormaPago] = useState("");
   const [vendedor, setVendedor] = useState("");
   const [observaciones, setObservaciones] = useState("");
   const [fechaEntrega, setFechaEntrega] = useState("");

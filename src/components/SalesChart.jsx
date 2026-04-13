@@ -27,7 +27,7 @@ const SalesChart = (props) => {
 
     return (
         <div>
-            <h5 style={{ marginTop: '40px', marginTop: '40px' }}>{props.title}</h5>
+            <h5 style={{ marginTop: '40px' }}>{props.title}</h5>
             <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />

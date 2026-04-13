@@ -10,7 +10,7 @@ import FormularioComprobante from "../components/FormularioComprobante";
 
 const Devolutions = () => {
 
-  const [tableData, setTableData] = useState([]);
+  //const [tableData, setTableData] = useState([]);
 
   const columns = [
     { header: "Nro. Dev", accessor: "id" },
