@@ -39,7 +39,7 @@ const Home = () => {
         <Button  onClick={() => setOpenModal(true)} type="success" text='Nueva factura' />
         <Button onClick={() => setOpenModal2(true)} type="success" text='Nuevo cliente' />
         <Button onClick={() => setOpenModal3(true)} type="success" text='Nuevo producto' />
-        <Button onClick={() => navigate("/reports")} type="success" text='Ver reportes'/>
+        <Button onClick={() => navigate("/reports")} type="tertiary" text='Ver reportes'/>
       </div>
 
       <SalesChart title="Gráfico de ventas" />

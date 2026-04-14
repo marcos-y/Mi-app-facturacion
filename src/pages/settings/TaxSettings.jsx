@@ -1,14 +1,17 @@
+import Button from "../../components/ui/Button";
+
 const TaxSettings = () => {
+
   const taxes = [
     { id: 1, name: "IVA 21%", rate: 21 },
     { id: 2, name: "IVA 10.5%", rate: 10.5 }
   ];
 
   return (
-    <div>
+    <div style={{ maxWidth: '500px', marginTop: '20px' }}>
       <h2>Impuestos</h2>
 
-      <button>Agregar impuesto</button>
+      <Button type='primary' text="Agregar impuesto"/>
 
       <table>
         <thead>

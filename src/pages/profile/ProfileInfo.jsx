@@ -1,3 +1,5 @@
+import Button from "../../components/ui/Button";
+
 const ProfileInfo = ({ user }) => {
   return (
     <div>
@@ -7,7 +9,7 @@ const ProfileInfo = ({ user }) => {
       <p>Email: {user.email}</p>
       <p>Rol: {user.role}</p>
 
-      <button>Editar perfil</button>
+      <Button type="success" text='Editar Perfil'/>
     </div>
   );
 };

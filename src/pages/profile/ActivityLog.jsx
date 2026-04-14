@@ -1,23 +1,22 @@
-import { useState } from "react";
-
-const Preferences = () => {
-  const [theme, setTheme] = useState("light");
+const ActivityLog = () => {
+    
+  const logs = [
+    "Creó factura #123",
+    "Editó cliente Juan Perez",
+    "Agregó producto Mouse"
+  ];
 
   return (
     <div>
-      <h2>Preferencias</h2>
+      <h2>Actividad reciente</h2>
 
-      <label>Tema</label>
-
-      <select
-        value={theme}
-        onChange={(e) => setTheme(e.target.value)}
-      >
-        <option value="light">Claro</option>
-        <option value="dark">Oscuro</option>
-      </select>
+      <ul>
+        {logs.map((log, index) => (
+          <li key={index}>{log}</li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default Preferences;
+export default ActivityLog;

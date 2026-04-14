@@ -343,9 +343,9 @@ const Clients = () => {
           <Icon size={20} color="#555" />
         </div>
         <Button onClick={() => setOpenModal2(true)} type="primary" text='Agregar Cliente' />
-        <Button type="primary" text='Exportar a Excel' />
-        <Button type="primary" text='Exportar a CSV' />
-        <Button type="primary" text='Exportar a PDF' />
+        <Button type="export" text='Exportar a Excel' />
+        <Button type="export" text='Exportar a CSV' />
+        <Button type="export" text='Exportar a PDF' />
       </div>
 
       <Table columns={columns} data={data} />

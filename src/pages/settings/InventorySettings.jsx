@@ -1,11 +1,13 @@
 import { useState } from "react";
+import Button from "../../components/ui/Button";
 
 const InventorySettings = () => {
+
   const [controlStock, setControlStock] = useState(true);
   const [allowNegative, setAllowNegative] = useState(false);
 
   return (
-    <div>
+    <div style={{  maxWidth: '500px', marginTop: '20px' }}>
       <h2>Configuración de Inventario</h2>
 
       <label>
@@ -26,7 +28,7 @@ const InventorySettings = () => {
         Permitir stock negativo
       </label>
 
-      <button>Guardar</button>
+      <Button type='primary' text="Guardar"/>
     </div>
   );
 };

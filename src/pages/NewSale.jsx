@@ -87,7 +87,7 @@ const NewSale = () => {
       header: "Acciones",
       accessor: "actions",
       render: (_, row) => (
-        <Button type="primary" text='Eliminar Fila' onClick={() => setOpenModal(true)} />
+        <Button type="secondary" text='Eliminar Fila' onClick={() => setOpenModal(true)} />
       )
     },
   ];
@@ -189,7 +189,7 @@ const NewSale = () => {
 
   return (
     <div style={{ marginLeft: '220px', maxWidth: '1100px', margin: 'auto', border: 'solid', borderRadius: '4px', padding: '15px' }}>
-      <h1>New Sale</h1>
+      <h1>Nueva Venta</h1>
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '370px' }}>
         <Button type="success" text='Guardar' />
         <Button onClick={() => setOpenModal(true)} type="secondary" text='Cancelar' />
@@ -225,13 +225,6 @@ const NewSale = () => {
         />
 
         <FormularioComprobante />
-
-        {/*
-        <FechaEmision
-          value={fechaEmision}
-          onChange={setFechaEmision}
-        />
-        */}
 
         <FiltrarFecha
           title="Fecha Emision"

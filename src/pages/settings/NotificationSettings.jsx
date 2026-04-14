@@ -1,11 +1,13 @@
 import { useState } from "react";
+import Button from "../../components/ui/Button";
 
 const NotificationSettings = () => {
+
   const [stockAlert, setStockAlert] = useState(true);
   const [salesAlert, setSalesAlert] = useState(false);
 
   return (
-    <div>
+    <div style={{  maxWidth: '500px', marginTop: '20px' }}>
       <h2>Notificaciones</h2>
 
       <label>
@@ -26,7 +28,7 @@ const NotificationSettings = () => {
         Notificación de ventas
       </label>
 
-      <button>Guardar</button>
+      <Button type='primary' text="Guardar"/>
     </div>
   );
 };

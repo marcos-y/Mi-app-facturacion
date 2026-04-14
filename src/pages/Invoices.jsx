@@ -233,10 +233,10 @@ const Invoices = () => {
       <h5>Facturas vencidas: 10</h5>
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '720px' }}>
         <Button type="success" onClick={() => setOpenModal2(true)} text='Nueva Factura' />
-        <Button type="success" text='Exportar a Excel' />
-        <Button type="success" text='Exportar a CSV' />
-        <Button type="success" text='Exportar a PDF' />
-        <Button type="success" text='Filtrar' />
+        <Button type="export" text='Exportar a Excel' />
+        <Button type="export" text='Exportar a CSV' />
+        <Button type="export" text='Exportar a PDF' />
+        <Button type="filter" text='Filtrar' />
       </div>
       <Table columns={columns} data={data} />
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)} title="Factura" children={modalData} />

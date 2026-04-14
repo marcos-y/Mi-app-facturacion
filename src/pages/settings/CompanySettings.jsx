@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import Button from "../../components/ui/Button";
+import { Form } from "react-bootstrap";
 
 const CompanySettings = () => {
 
@@ -15,38 +16,50 @@ const CompanySettings = () => {
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: '500px', marginTop:'20px', border:'solid', borderRadius:'10px', borderColor:'black', padding:'10px' }}>
       <h2>Datos de Empresa</h2>
 
-      <input
-        name="name"
-        placeholder="Nombre empresa"
-        value={company.name}
-        onChange={handleChange}
-      />
+      <Form.Group>
+        <Form.Label>Nombre empresa</Form.Label>
+        <Form.Control
+          name="nombre"
+          value={company.name}
+          onChange={handleChange}
+          required
+        />
+      </Form.Group>
 
-      <input
-        name="taxId"
-        placeholder="CUIT"
-        value={company.taxId}
-        onChange={handleChange}
-      />
+      <Form.Group>
+        <Form.Label>CUIT</Form.Label>
+        <Form.Control
+          name="taxI"
+          value={company.taxId}
+          onChange={handleChange}
+          required
+        />
+      </Form.Group>
+      
+      <Form.Group>
+        <Form.Label>Dirección</Form.Label>
+        <Form.Control
+          name="address"
+          value={company.address}
+          onChange={handleChange}
+          required
+        />
+      </Form.Group>
 
-      <input
-        name="address"
-        placeholder="Dirección"
-        value={company.address}
-        onChange={handleChange}
-      />
+      <Form.Group>
+        <Form.Label>Teléfono</Form.Label>
+        <Form.Control
+          name="phone"
+          value={company.phone}
+          onChange={handleChange}
+          required
+        />
+      </Form.Group>
 
-      <input
-        name="phone"
-        placeholder="Teléfono"
-        value={company.phone}
-        onChange={handleChange}
-      />
-
-      <button>Guardar</button>
+      <Button type='primary' text="Guardar" />
     </div>
   );
 };

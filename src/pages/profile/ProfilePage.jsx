@@ -2,9 +2,9 @@ import ProfileInfo from "./ProfileInfo";
 import ChangePassword from "./ChangePassword";
 import Preferences from "./Preferences";
 import ActivityLog from "./ActivityLog";
-import AvatarUpload from "./AvatarUpload";
 
 const ProfilePage = () => {
+
   const user = {
     name: "Juan",
     email: "juan@email.com",
@@ -12,10 +12,11 @@ const ProfilePage = () => {
   };
 
   return (
-    <div style={{ marginLeft: '220px' }}>
+    <div style={{ marginLeft: '220px', borderRadius: '5px', border:'solid', maxWidth:'600px', padding: '30px' }}>
+      
       <h1>Mi Perfil</h1>
 
-      <AvatarUpload />
+      <ActivityLog />
 
       <ProfileInfo user={user} />
 
@@ -23,7 +24,6 @@ const ProfilePage = () => {
 
       <ChangePassword />
 
-      <ActivityLog />
     </div>
   );
 };

@@ -230,10 +230,10 @@ const Home = () => {
             <h4 style={{ marginTop: '30px' }}>Listado facturas del Mes</h4>
 
             <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '800px' }}>
-                <Button type="primary" text='Filtrar por fecha' />
-                <Button type="primary" text='Filtrar por cliente' />
-                <Button type="primary" text='Filtrar por estado de pago' />
-                <Button type="primary" text='Filtrar por vendedor' />
+                <Button type="filter" text='Filtrar por fecha' />
+                <Button type="filter" text='Filtrar por cliente' />
+                <Button type="filter" text='Filtrar por estado de pago' />
+                <Button type="filter" text='Filtrar por vendedor' />
             </div>
 
             <Table columns={columns} data={data} />
@@ -257,10 +257,10 @@ const Home = () => {
             <Table columns={columns} data={data2} />
 
             <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '700px' }}>
-                <Button type="primary" text='Exportar a Excel' />
-                <Button type="primary" text='Exportar a CSV' />
-                <Button type="primary" text='Exportar a PDF' />
-                <Button type="primary" text='Imprimir resumen' />
+                <Button type="export" text='Exportar a Excel' />
+                <Button type="export" text='Exportar a CSV' />
+                <Button type="export" text='Exportar a PDF' />
+                <Button type="export" text='Imprimir resumen' />
             </div>
 
         </div>

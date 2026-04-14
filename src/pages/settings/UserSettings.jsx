@@ -1,14 +1,17 @@
+import Button from "../../components/ui/Button";
+
 const UserSettings = () => {
+
   const users = [
     { id: 1, name: "Juan", role: "Administrador" },
     { id: 2, name: "Maria", role: "Vendedor" }
   ];
 
   return (
-    <div>
+    <div style={{ maxWidth: '500px', marginTop: '20px' }}>
       <h2>Usuarios</h2>
 
-      <button>Crear usuario</button>
+      <Button type='primary' text="Crear usuario"/>
 
       <table>
         <thead>

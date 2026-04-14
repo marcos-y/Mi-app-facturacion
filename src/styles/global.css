@@ -124,22 +124,68 @@
 
 /* Variante secundaria */
 .custom-btn.secondary {
-  background-color: #FF0000;
+  background-color: #EF4444;
   color: white;
 }
 
 .custom-btn.secondary:hover {
-  background-color: #5c636a;
+  background-color: #EF4444;
+  transform: translateY(-2px);
 }
 
 /* Variante éxito */
 .custom-btn.success {
-  background-color: #198754;
+  background-color: #22C55E;
   color: white;
 }
 
 .custom-btn.success:hover {
   background-color: #157347;
+  transform: translateY(-2px);
+}
+
+/* Variante consulta/visual */
+.custom-btn.tertiary {
+  background-color: #6B7280;
+  color: white;
+}
+
+.custom-btn.tertiary:hover {
+  background-color: #6B7280;
+  transform: translateY(-2px);
+}
+
+/* Variante export*/
+.custom-btn.export {
+  background-color: #16A34A;
+  color: white;
+}
+
+.custom-btn.export:hover {
+  background-color: #157347;
+  transform: translateY(-2px);
+}
+
+/* Variante filtrart*/
+.custom-btn.filter {
+  background-color: #6B7280;
+  color: white;
+}
+
+.custom-btn.filter:hover {
+  background-color: #6B7280;
+  transform: translateY(-2px);
+}
+
+/* Variante editar*/
+.custom-btn.edit {
+  background-color: #3B82F6;
+  color: white;
+}
+
+.custom-btn.edit:hover {
+  background-color: #3B82F6;
+  transform: translateY(-2px);
 }
 
 /* Badge */

@@ -37,7 +37,7 @@ const Inventory = () => {
       header: "Editar",
       accessor: "editar",
       render: (_, row) => (
-        <Button type="primary" text='ver' onClick={() => handleClick3([row.producto, row.codigo, row.categoria, row.precio, row.stock, row.estado])} />
+        <Button type="edit" text='editar' onClick={() => handleClick3([row.producto, row.codigo, row.categoria, row.precio, row.stock, row.estado])} />
       )
     },
     {
@@ -286,9 +286,7 @@ const Inventory = () => {
     }
   };
 
-
   const [query, setQuery] = useState("");
-
 
   //Modal VER producto
   const handleClick = (props) => {
@@ -332,9 +330,9 @@ const Inventory = () => {
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '780px' }}>
         <Button type="success" onClick={() => setOpenModal2(true)} text='+ Nuevo producto' />
         <Button type="success" text='Importar' />
-        <Button type="success" text='Exportar a Excel' />
-        <Button type="success" text='Exportar a CSV' />
-        <Button type="success" text='Exportar a PDF' />
+        <Button type="export" text='Exportar a Excel' />
+        <Button type="export" text='Exportar a CSV' />
+        <Button type="export" text='Exportar a PDF' />
       </div>
 
       <div style={styles.container}>
