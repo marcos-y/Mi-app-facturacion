@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Icon from "../components/Icon";
-import Button from '../components/Button';
-import Table from "../components/Table";
-import Card from "../components/Card";
+import Icon from "../components/ui/Icon";
+import Button from '../components/ui/Button';
+import Table from "../components/ui/Table";
+import Card from "../components/ui/Card";
 import client from '../assets/client.png';
-import Badge from "../components/Badge";
-import Modal from "../components/Modal";
+import Badge from "../components/ui/Badge";
+import Modal from "../components/ui/Modal";
 import NuevoCliente from "../components/NuevoCliente";
 
 const Clients = () => {

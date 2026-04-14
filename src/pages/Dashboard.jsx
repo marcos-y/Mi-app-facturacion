@@ -1,5 +1,5 @@
-import Card from "../components/Card";
-import SalesChart from '../components/SalesChart';
+import Card from "../components/ui/Card";
+import SalesChart from '../components/charts/SalesChart';
 import RecentInvoices from '../components/RecentInvoices';
 import sales_daily from '../assets/sales_daily.jpg';
 import devolution from '../assets/devolution.png';

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Table from "../components/Table";
-import Button from "../components/Button";
-import Modal from "../components/Modal";
+import Table from "../components/ui/Table";
+import Button from "../components/ui/Button";
+import Modal from "../components/ui/Modal";
 import DetalleDevolucion from "../components/DetalleDevolucion";
 import NuevaDevolucion from "../components/NuevaDevolucion";
-import Fecha from "../components/FiltrarFecha";
-import SelectorEstado from "../components/SelectEstado";
+import Fecha from "../components/ui/FiltrarFecha";
 import FormularioComprobante from "../components/FormularioComprobante";
+import Selector from "../components/ui/Select";
 
 const Devolutions = () => {
 
@@ -320,10 +320,13 @@ const Devolutions = () => {
         onClose={() => setOpenModal4(false)}
         title="Filtrar Estado"
       >
-        <SelectorEstado
-          estados={estados}
+        <Selector
+          options={estados}
           value={estado}
-          onChange={setEstado} />
+          onChange={setEstado}
+          title="Estado del Comprobante"
+          label="Seleccionar Tipo Estado..."
+        />
 
       </Modal>
 
@@ -332,7 +335,7 @@ const Devolutions = () => {
         onClose={() => setOpenModal5(false)}
         title="Filtrar Por Factura"
       >
-        <FormularioComprobante/>
+        <FormularioComprobante />
       </Modal>
 
     </div>

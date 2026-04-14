@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Button from "../components/Button";
-import Table from "../components/Table";
-import Icon from "../components/Icon";
-import Modal from "../components/Modal";
+import Button from "../components/ui/Button";
+import Table from "../components/ui/Table";
+import Icon from "../components/ui/Icon";
+import Modal from "../components/ui/Modal";
 
 const Products = () => {
 

@@ -6,7 +6,7 @@ import BillingSettings from "./BillingSettings";
 import InventorySettings from "./InventorySettings";
 import NotificationSettings from "./NotificationSettings";
 import IntegrationSettings from "./IntegrationSettings";
-import Button from "../../components/Button";
+import Button from "../../components/ui/Button";
 
 const SettingsPage = () => {
 

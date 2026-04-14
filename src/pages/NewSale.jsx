@@ -1,18 +1,12 @@
 import { useState } from "react";
-import Button from "../components/Button";
-import ClienteSelector from "../components/ClienteSelector";
-import Modal from "../components/Modal";
-import Table from "../components/Table";
-import CampoObservaciones from "../components/CampoOberservaciones";
-import SelectorVendedor from "../components/SelectVendedor";
-import CondicionPago from "../components/CondicionPago";
-import FechaEntrega from "../components/FechaEntrega";
-import FechaEmision from "../components/FechaEmision";
-import SelectorComprobante from "../components/SelectComprobante";
-import SelectorFactura from "../components/SelectFactura";
-import SelectorEstado from "../components/SelectEstado";
+import Button from "../components/ui/Button";
+import ClienteSelector from "../components/ui/ClienteSelector";
+import Modal from "../components/ui/Modal";
+import Table from "../components/ui/Table";
+import CampoObservaciones from "../components/ui/CampoOberservaciones";
+import FiltrarFecha from "../components/ui/FiltrarFecha";
+import Selector from "../components/ui/Select";
 import FormularioComprobante from "../components/FormularioComprobante";
-import SelectorPtoVenta from "../components/SelectPtoVenta";
 import NuevoCliente from "../components/NuevoCliente";
 import NuevoProducto from "../components/NuevoProducto";
 
@@ -183,10 +177,18 @@ const NewSale = () => {
     { id: 4, nombre: "0004" },
   ];
 
+  const [condicion, setCondicion] = useState("");
+  const condiciones = [
+    { id: 1, nombre: "contado" },
+    { id: 2, nombre: "15_dias" },
+    { id: 3, nombre: "30_dias" },
+    { id: 4, nombre: "60_dias" }
+  ];
+
   //const data = [{ }];
 
   return (
-    <div style={{ marginLeft: '220px', maxWidth:'1000px', margin:'auto' }}>
+    <div style={{ marginLeft: '220px', maxWidth: '1100px', margin: 'auto', border: 'solid', borderRadius: '4px', padding: '15px' }}>
       <h1>New Sale</h1>
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '370px' }}>
         <Button type="success" text='Guardar' />
@@ -206,35 +208,51 @@ const NewSale = () => {
 
       <div class="datos-comprobante">
 
-        <SelectorComprobante
-          comprobantes={comprobantes}
+        <Selector
+          options={comprobantes}
           value={comprobante}
           onChange={setComprobante}
+          title="Seleccionar comprobantes..."
+          label="Comprobante"
         />
 
-        <SelectorFactura
-          facturas={facturas}
+        <Selector
+          options={facturas}
           value={factura}
           onChange={setComprobante}
+          title="Tipo De Factura"
+          label="Seleccionar Tipo Factura.."
         />
 
         <FormularioComprobante />
 
+        {/*
         <FechaEmision
           value={fechaEmision}
           onChange={setFechaEmision}
         />
+        */}
 
-        <SelectorPtoVenta
-          ptosVta={ptosVta}
-          value={ptoVta}
-          onChange={setPtoVta}
+        <FiltrarFecha
+          title="Fecha Emision"
+          value={fechaEmision}
+          onChange={setFechaEmision}
         />
 
-        <SelectorEstado
-          estados={estados}
+        <Selector
+          options={ptosVta}
+          value={ptoVta}
+          onChange={setPtoVta}
+          title="Puntos de Venta"
+          label="Seleccionar punto de venta..."
+        />
+
+        <Selector
+          options={estados}
           value={estado}
           onChange={setEstado}
+          title="Estado del Comprobante"
+          label="Seleccionar Tipo Estado..."
         />
 
       </div>
@@ -242,20 +260,26 @@ const NewSale = () => {
       <h4 style={{ marginTop: '10px' }}>Productos o servicios vendidos</h4>
       <Table columns={columns} data={data} />
 
-      <SelectorVendedor
-        vendedores={vendedores}
+      <Selector
+        options={vendedores}
         value={vendedor}
         onChange={setVendedor}
+        title="Vendedor"
+        label="Seleccionar vendedor..."
       />
 
-      <FechaEntrega
+      <FiltrarFecha
+        title="Fecha Entrega"
         value={fechaEntrega}
         onChange={setFechaEntrega}
       />
 
-      <CondicionPago
-        value={condicionPago}
-        onChange={setCondicionPago}
+      <Selector
+        options={condiciones}
+        value={condicion}
+        onChange={setCondicion}
+        title="Condición de pago"
+        label="Seleccionar condicion pago..."
       />
 
       <CampoObservaciones
@@ -266,7 +290,7 @@ const NewSale = () => {
       <h4 style={{ marginTop: '10px' }}>Acciones del sistema</h4>
 
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '1000px' }}>
-        <Button onClick={() => setOpenModal3(true)}  type="success" text='Agregar Producto' />
+        <Button onClick={() => setOpenModal3(true)} type="success" text='Agregar Producto' />
         <Button type="success" text='Guardar Venta' />
         <Button type="success" text='Emitir Factura' />
         <Button type="success" text='Imprimir Ticket' />

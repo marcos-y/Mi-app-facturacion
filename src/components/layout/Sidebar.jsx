@@ -1,4 +1,4 @@
-import '../styles/global.css';
+import '../../styles/global.css';
 
 const Sidebar = () => {
   return (
@@ -7,7 +7,6 @@ const Sidebar = () => {
         <li className="sidebar-item"><a href="/home">Home</a></li>
         <li className="sidebar-item"><a href="/dashboard">Dashboard</a></li>
         <li className="sidebar-item"><a href="/clients">Clients</a></li>
-        {/*<li className="sidebar-item"><a href="/products">Products</a></li>*/}
         <li className="sidebar-item"><a href="/invoices">Invoices</a></li>
         <li className="sidebar-item"><a href="/new-sale">Nueva venta</a></li>
         <li className="sidebar-item"><a href="/inventory">Inventory</a></li>

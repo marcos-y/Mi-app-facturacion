@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "../components/Button";
-import Table from "../components/Table";
-import Modal from "../components/Modal";
+import Button from "../components/ui/Button";
+import Table from "../components/ui/Table";
+import Modal from "../components/ui/Modal";
 import NuevaFactura from "../components/NuevaFactura";
 
 const Invoices = () => {

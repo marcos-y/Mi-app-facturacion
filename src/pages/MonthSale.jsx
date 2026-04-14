@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Card from '../components/Card';
+import Card from '../components/ui/Card';
 import sales_daily from '../assets/sales_daily.jpg';
 import month_sales from '../assets/month_sales.png';
 import invoice from '../assets/invoice.jpg';
-import SalesDayChart from '../components/SalesDayChart';
-import CategorySalesChart from "../components/CategorySalesChart";
-import PaymentStateChart from "../components/PaymentStateChart";
-import Table from "../components/Table";
-import Button from "../components/Button";
+import SalesDayChart from '../components/charts/SalesDayChart';
+import CategorySalesChart from "../components/charts/CategorySalesChart";
+import PaymentStateChart from "../components/charts/PaymentStateChart";
+import Table from "../components/ui/Table";
+import Button from "../components/ui/Button";
 
 /*
 const data = [

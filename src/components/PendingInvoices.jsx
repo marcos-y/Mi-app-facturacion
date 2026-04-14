@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Table from "./Table";
-import Button from "./Button";
-import Modal from "./Modal";
+import Table from "./ui/Table";
+import Button from "./ui/Button";
+import Modal from "./ui/Modal";
 
 const PendingInvoices = () => {
 

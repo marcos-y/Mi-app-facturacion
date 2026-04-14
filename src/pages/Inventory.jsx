@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Table from "../components/Table";
-import Button from "../components/Button";
-import Icon from "../components/Icon";
-import Modal from "../components/Modal";
+import Table from "../components/ui/Table";
+import Button from "../components/ui/Button";
+import Icon from "../components/ui/Icon";
+import Modal from "../components/ui/Modal";
 import NuevoProducto from "../components/NuevoProducto";
 
 const Inventory = () => {

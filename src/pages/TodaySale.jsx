@@ -1,10 +1,10 @@
-import Card from '../components/Card';
+import Card from '../components/ui/Card';
 import sales_daily from '../assets/sales_daily.jpg';
 import month_sales from '../assets/month_sales.png';
 import invoice from '../assets/invoice.jpg';
-import SalesChart from '../components/SalesChart';
-import GraficoMediosPago from "../components/GraficoMediosPago";
-import GraficoTopProductos from "../components/GraficoTopProductos";
+import SalesChart from '../components/charts/SalesChart';
+import GraficoMediosPago from "../components/charts/GraficoMediosPago";
+import GraficoTopProductos from "../components/charts/GraficoTopProductos";
 
 const data = [
   { metodo: "Efectivo", monto: 50000 },
