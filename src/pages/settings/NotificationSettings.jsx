@@ -7,7 +7,7 @@ const NotificationSettings = () => {
   const [salesAlert, setSalesAlert] = useState(false);
 
   return (
-    <div style={{  maxWidth: '500px', marginTop: '20px' }}>
+    <div style={{  maxWidth: '250px', marginTop: '20px', display:'flex', flexWrap:'wrap'}}>
       <h2>Notificaciones</h2>
 
       <label>

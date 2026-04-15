@@ -1,8 +1,11 @@
 import { useState } from "react";
+import * as XLSX from "xlsx";
 import Button from "../components/ui/Button";
 import Table from "../components/ui/Table";
 import Modal from "../components/ui/Modal";
 import NuevaFactura from "../components/NuevaFactura";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const Invoices = () => {
 
@@ -198,30 +201,59 @@ const Invoices = () => {
 
   //const handleSubmit = (e) => {
 
-    //e.preventDefault();
+  //e.preventDefault();
 
-    //El Modal no sabe cómo ni dónde guardar los datos, por eso onSave viene desde el componente padre (Invoices.jsx). Ahí es donde se actualiza el estado de la lista de facturas:
-    //const handleSave = (newInvoice) => {
-    //setInvoices([...invoices, { id: invoices.length + 1, ...newInvoice }]);
-    //};
+  //El Modal no sabe cómo ni dónde guardar los datos, por eso onSave viene desde el componente padre (Invoices.jsx). Ahí es donde se actualiza el estado de la lista de facturas:
+  //const handleSave = (newInvoice) => {
+  //setInvoices([...invoices, { id: invoices.length + 1, ...newInvoice }]);
+  //};
 
-    /*onSave({
-      nroFactura: `INV-${Math.floor(Math.random() * 1000).toString().padStart(3, "0")}`,
-      cliente: selectedClient,
-      fecha: new Date().toISOString().split("T")[0],
-      total,
-      estado: status,
-      productos: selectedProducts,
-    });*/
+  /*onSave({
+    nroFactura: `INV-${Math.floor(Math.random() * 1000).toString().padStart(3, "0")}`,
+    cliente: selectedClient,
+    fecha: new Date().toISOString().split("T")[0],
+    total,
+    estado: status,
+    productos: selectedProducts,
+  });*/
 
-    // Limpiar formulario
-    //setSelectedClient("");
-    //setSelectedProducts([]);
-    //setStatus("Pendiente");
-    //onClose();
+  // Limpiar formulario
+  //setSelectedClient("");
+  //setSelectedProducts([]);
+  //setStatus("Pendiente");
+  //onClose();
   //};
 
   /**********************************/
+
+  /* Descarga Excel */
+  const handleClickDownload = (props) => {
+
+    const worksheet = XLSX.utils.json_to_sheet(props);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Datos");
+    // Descargar archivo
+    XLSX.writeFile(workbook, "facturas.xlsx");
+
+    console.log('Descarga finalizada')
+  };
+
+  
+   /* Descarga PDF */
+  const handleClickDownloadPDF = (data) => {
+
+    const doc = new jsPDF();
+    const headers = [Object.keys(data[0])];
+    const rows = data.map(obj => Object.values(obj));
+
+    autoTable(doc, {
+      head: headers,
+      body: rows
+    });
+
+    doc.save("facturas.pdf");
+  };
+
 
   return (
     <div style={{ marginLeft: '220px' }}>
@@ -232,10 +264,10 @@ const Invoices = () => {
       <h5>Facturas pendientes: 20</h5>
       <h5>Facturas vencidas: 10</h5>
       <div style={{ display: 'flex', padding: '10px', justifyContent: 'space-between', maxWidth: '720px' }}>
-        <Button type="success" onClick={() => setOpenModal2(true)} text='Nueva Factura' />
-        <Button type="export" text='Exportar a Excel' />
+        <Button onClick={() => setOpenModal2(true)} type="success" text='Nueva Factura' />
+        <Button onClick={() => handleClickDownload(data)} type="export" text='Exportar a Excel' />
         <Button type="export" text='Exportar a CSV' />
-        <Button type="export" text='Exportar a PDF' />
+        <Button onClick={() => handleClickDownloadPDF(data)} type="export" text='Exportar a PDF' />
         <Button type="filter" text='Filtrar' />
       </div>
       <Table columns={columns} data={data} />

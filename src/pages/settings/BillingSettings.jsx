@@ -8,7 +8,7 @@ const BillingSettings = () => {
   const [autoNumber, setAutoNumber] = useState(true);
 
   return (
-    <div style={{  maxWidth: '500px', marginTop: '20px' }}>
+    <div style={{  maxWidth: '250px', marginTop: '20px', display:'flex', flexWrap:'wrap'}}>
       <h2>Configuración de Facturación</h2>
 
       <Form.Group>

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { exportExcel } from "../utils/exportExcel";
+import { exportPDF } from "../utils/exportPDF";
+import { exportCSV } from "../utils/exportCSV";
+import { arrayToCSV } from "../utils/exportCSV";
 import Icon from "../components/ui/Icon";
 import Button from '../components/ui/Button';
 import Table from "../components/ui/Table";
@@ -264,6 +268,29 @@ const Clients = () => {
     }
   ];
 
+  /* Descarga Excel */
+  const handleClickDownload = (data) => {
+
+    exportExcel(data)
+
+  };
+
+  /* Descarga Csv */
+  const handleClickDownloadCSV = (data) => {
+
+    const csv = arrayToCSV(data);
+
+    exportCSV(csv)
+
+  }
+
+  /* Descarga Pdf */
+  const handleClickDownloadPDF = (data) => {
+
+    exportPDF(data)
+
+  };
+
   /*
   const data2 = [{
     "header": {
@@ -343,9 +370,9 @@ const Clients = () => {
           <Icon size={20} color="#555" />
         </div>
         <Button onClick={() => setOpenModal2(true)} type="primary" text='Agregar Cliente' />
-        <Button type="export" text='Exportar a Excel' />
-        <Button type="export" text='Exportar a CSV' />
-        <Button type="export" text='Exportar a PDF' />
+        <Button onClick={() => handleClickDownload(data)} type="export" text='Exportar a Excel' />
+        <Button onClick={() => handleClickDownloadCSV(data)} type="export" text='Exportar a CSV' />
+        <Button onClick={() => handleClickDownloadPDF(data)} type="export" text='Exportar a PDF' />
       </div>
 
       <Table columns={columns} data={data} />

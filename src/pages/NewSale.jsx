@@ -140,7 +140,7 @@ const NewSale = () => {
   const [observaciones, setObservaciones] = useState("");
   const [fechaEntrega, setFechaEntrega] = useState("");
   const [fechaEmision, setFechaEmision] = useState("");
-  const [condicionPago, setCondicionPago] = useState("");
+  //const [condicionPago, setCondicionPago] = useState("");
 
   const vendedores = [
     { id: 1, nombre: "Juan" },

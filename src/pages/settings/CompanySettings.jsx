@@ -49,7 +49,7 @@ const CompanySettings = () => {
         />
       </Form.Group>
 
-      <Form.Group>
+      <Form.Group style={{ marginBottom: '5px'}}>
         <Form.Label>Teléfono</Form.Label>
         <Form.Control
           name="phone"
