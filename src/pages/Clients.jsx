@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 import { exportExcel } from "../utils/exportExcel";
 import { exportPDF } from "../utils/exportPDF";
 import { exportCSV } from "../utils/exportCSV";
@@ -10,6 +11,7 @@ import Card from "../components/ui/Card";
 import client from '../assets/client.png';
 import Badge from "../components/ui/Badge";
 import Modal from "../components/ui/Modal";
+import Cliente from "../components/Cliente";
 import NuevoCliente from "../components/NuevoCliente";
 
 const Clients = () => {
@@ -291,44 +293,6 @@ const Clients = () => {
 
   };
 
-  /*
-  const data2 = [{
-    "header": {
-      "name": "Juan Pérez",
-      "company_name": "Mi Empresa SRL",
-      "doc_number": "DNI 12345678 / CUIT 30-12345678-9",
-      "tax_condition": "Consumidor Final",
-      "status": "Activo"
-    },
-    "contact": {
-      "primary_email": "juan.perez@mail.com",
-      "primary_phone": "+54 11 1234-5678",
-      "billing_address": "Av. Siempre Viva 123, Buenos Aires, CABA",
-      "shipping_address": "Av. Siempre Viva 123, Buenos Aires, CABA"
-    },
-    "financial_summary": {
-      "payment_terms": "30 días",
-      "credit_limit": 100000,
-      "current_balance": 25000,
-      "preferred_invoice_type": "Factura B"
-    },
-    "historical_summary": {
-      "last_invoice_date": "2026-04-05",
-      "total_invoices": 124,
-      "total_billed": 450000,
-      "total_paid": 425000,
-      "total_outstanding": 25000
-    },
-    "preferences": {
-      "language": "es",
-      "notification_preferences": {
-        "email": true,
-        "whatsapp": true
-      }
-    }
-  }];
-  */
-
   const styles = {
     container: {
       display: "flex",
@@ -349,6 +313,94 @@ const Clients = () => {
   };
 
   const [query, setQuery] = useState("");
+  const [Clientes, setClientes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  /*
+  [
+    {
+        "header": {
+            "name": "Juan Pérez",
+            "company_name": "Mi Empresa SRL",
+            "doc_number": "DNI 12345678",
+            "tax_condition": "CONSUMIDOR_FINAL",
+            "status": "active"
+        },
+        "contact": {
+            "primary_email": "juan.perez@mail.com",
+            "primary_phone": "+54 11 1234-5678"
+        },
+        "financial_summary": {
+            "payment_terms": "30 días",
+            "credit_limit": "100000.00",
+            "current_balance": "25000.00",
+            "preferred_invoice_type": "Factura B"
+        },
+        "historical_summary": {
+            "last_invoice_date": "2026-04-05T03:00:00.000Z",
+            "total_invoices": 124,
+            "total_billed": "450000.00",
+            "total_paid": "425000.00",
+            "total_outstanding": "25000.00"
+        },
+        "preferences": {
+            "language": "es",
+            "notification_preferences": {
+                "email": true,
+                "whatsapp": true
+            }
+        }
+    }
+]
+*/
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/clients/");
+        setClientes(response.data);
+        console.log(response.data)
+        //{ 
+        //  nombre: ,
+        //  email: ,
+        //  telefono: ,
+        //  empresa: ,
+        //  ultimafactura: ,
+        //  totalFacturado: ,
+        //  fechavto: ,
+        //  
+        //}
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //Cliente detalle MODAL
+  const clienteEjemplo = {
+    nombre: "Juan Pérez",
+    documento: "CUIT 20-12345678-9",
+    fechaAlta: "2024-01-10",
+    direccion: "Av. Siempre Viva 742",
+    telefono: "381-1234567",
+    email: "juan@email.com",
+    condicionIVA: "Responsable Inscripto",
+    tipoComprobante: "Factura A",
+    numeroImpositivo: "123456789",
+    formaPago: "Transferencia",
+    plazoPago: "30 días",
+    limiteCredito: 50000,
+    listaPrecios: "Mayorista",
+    facturas: [],
+    pagos: [],
+    deuda: 12000,
+    clasificacion: "VIP",
+    vendedor: "Carlos Gómez",
+    observaciones: "Cliente frecuente",
+  };
 
   return (
     <div style={{ marginLeft: '220px' }}>
@@ -382,7 +434,14 @@ const Clients = () => {
         <Card button={true} image={client} title='Resumen de Clientes' />
       </div>
 
-      <Modal isOpen={openModal} onClose={() => setOpenModal(false)} title="Cliente" children={modalData} />
+      <Modal 
+        isOpen={openModal}
+        onClose={() => setOpenModal(false)}
+        title="Cliente"
+      >
+        <Cliente cliente={clienteEjemplo} />
+      </Modal>
+
       <Modal
         isOpen={openModal2}
         onClose={() => setOpenModal2(false)}
